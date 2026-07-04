@@ -395,7 +395,7 @@ function generateJs() {
                     });
                 } else if (/^Analyzed (.+)$/i.test(valNorm)) {
                     newVal = valNorm.replace(/^Analyzed (.+)$/i, (match, prefix) => {
-                        return "探索了 " + prefix;
+                        return "分析了 " + prefix;
                     });
                 } else if (/^Edited (.+)$/i.test(valNorm)) {
                     newVal = valNorm.replace(/^Edited (.+)$/i, (match, prefix) => {
