@@ -93,7 +93,7 @@ function generateJs() {
     const translatedValues = new WeakMap();
 
     // 禁区类名/属性特征
-    const BLOCKED_CLASSES = ['monaco', 'editor', 'terminal', 'output', 'debug', 'code', 'artifact', 'suggest', 'message', 'chat', 'markdown', 'thought', 'thinking', 'reason', 'step', 'log', 'detail'];
+    const BLOCKED_CLASSES = ['monaco', 'editor', 'terminal', 'output', 'debug', 'code', 'artifact', 'suggest', 'message', 'chat', 'markdown', 'thought', 'thinking', 'reason'];
     const BLOCKED_TAGS = ['SCRIPT', 'STYLE', 'CODE', 'PRE', 'INPUT', 'TEXTAREA', 'SVG', 'CANVAS', 'SYMBOL', 'PATH'];
 
     function norm(s) {
@@ -125,7 +125,7 @@ function generateJs() {
     function isInBlockedZone(node) {
         let curr = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
         let depth = 0;
-        while (curr && depth < 80) { // 向上回溯 80 层，防止深层嵌套导致回溯中断
+        while (curr && depth < 30) { // 向上回溯 30 层，防止深层嵌套导致回溯中断
             if (curr.nodeType === Node.ELEMENT_NODE) {
                 const tag = curr.tagName.toUpperCase();
                 if (BLOCKED_TAGS.includes(tag)) return true;
