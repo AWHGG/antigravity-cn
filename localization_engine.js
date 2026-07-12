@@ -482,7 +482,7 @@ function generateJs() {
                 if (newVal !== originalVal) {
                     translatedValues.set(node, newVal);
                     node.nodeValue = newVal;
-                    if (newVal === "命令" || newVal === "指令") {
+                    if (newVal === "命令" || newVal === "指令" || newVal === "跳过" || newVal === "展开" || newVal === "收起") {
                         const parent = node.parentElement;
                         if (parent) {
                             try {
