@@ -420,7 +420,7 @@ function generateJs() {
                     newVal = valNorm.replace(/^(\\d+)\\s+subagents?\\s+running$/i, '$1 个子智能体正在运行');
                 } else if (/^(\\d+)\\s+tasks?\\s+running$/i.test(valNorm)) {
                     newVal = valNorm.replace(/^(\\d+)\\s+tasks?\\s+running$/i, '$1 个任务正在运行');
-                } else if (/(\\d+)\\s+(files?|folders?|pages?|urls?|domains?|actions?|tools?|subagents?|tasks?|commands?)/i.test(valNorm)) {
+                } else if (/(\\d+)\\s+(files?|folders?|pages?|urls?|domains?|actions?|tools?|subagents?|tasks?|commands?|image\\s+attachments?)/i.test(valNorm)) {
                     let temp = valNorm;
                     temp = temp.replace(/(\\d+)\\s+files?/gi, '$1 个文件');
                     temp = temp.replace(/(\\d+)\\s+folders?/gi, '$1 个文件夹');
@@ -432,6 +432,7 @@ function generateJs() {
                     temp = temp.replace(/(\\d+)\\s+subagents?/gi, '$1 个子智能体');
                     temp = temp.replace(/(\\d+)\\s+tasks?/gi, '$1 个任务');
                     temp = temp.replace(/(\\d+)\\s+commands?/gi, '$1 个命令');
+                    temp = temp.replace(/(\\d+)\\s+image\\s+attachments?/gi, '$1 个图片附件');
                     newVal = temp;
                 } else if (/^See all \\((\\d+)\\)$/i.test(valNorm)) {
                     newVal = valNorm.replace(/^See all \\((\\d+)\\)$/i, (match, num) => {

@@ -463,5 +463,10 @@
     "Environment": "环境",
     "Scheduled": "已计划",
     "Expand": "展开",
-    "Collapse": "收起"
+    "Collapse": "收起",
+    "For Turn": "针对本轮",
+    "View Split Diff": "查看分栏对比",
+    "Collapse All": "折叠全部",
+    "image attachment": "图片附件",
+    "image attachments": "图片附件"
 }
